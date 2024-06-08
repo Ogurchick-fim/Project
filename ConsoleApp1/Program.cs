@@ -6,8 +6,14 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Hello World!");
+            Node nod = new Node("Capital", "Economic", "Marxism", "Karl Marx", "345");
+            LinkedList libary = new LinkedList(nod);
+            Node node = new Node("Gay scince", "Philosophy", "asjdaj", "Fridrich","211");
+ 
+            libary.AddAfterLastNode(node);
+ 
+            libary.Edit("Capital","lox");
+            libary.calculate();
         }
     }
 }
