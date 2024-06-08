@@ -127,5 +127,91 @@ namespace ConsoleApp1
                 current = current.next;
             }
         }
+
+    public void Edit(string title, string details)
+        {
+            Node current = _head;
+            while (current != null)
+            {
+                if (current.data[0] == title)
+                {
+                    current.data[2] = details;
+                    Console.WriteLine(string.Join(" ", current.data));
+                    return;
+                }
+                current = current.next;
+            }
+        }
  
+        public void list_author(string author)
+        {
+            Node current = _head;
+            while (current != null)
+            {
+                if (current.data[3] == author)
+                {
+ 
+                    Console.WriteLine(string.Join(" ", current.data));
+                }
+                current = current.next;
+            }
+        }
+ 
+        public void list_genre(string genre)
+        {
+            Node current = _head;
+            while (current != null)
+            {
+                if (current.data[1] == genre)
+                {
+ 
+                    Console.WriteLine(string.Join(" ", current.data));
+                }
+                current = current.next;
+            }
+        }
+ 
+        public void calculate()
+        {
+            Node current = _head;
+            int total = 0;
+            while (current != null)
+            {
+                int add = int.Parse(current.data[4]);
+                total += add;
+                current = current.next;
+            }
+            Console.WriteLine(total);
+        }
+ 
+ 
+        public int Count()
+        {
+            return _count;
+        }
+ 
+        public Node Head()
+        {
+            return _head;
+        }
+ 
+        public Node Tail()
+        {
+            return _tail;
+        }
+ 
+    }
+ 
+    class Node
+    {
+        public string[] data;
+ 
+        public Node next;
+        public Node(string title ,string genre, string detail, string author , string pages)
+        {
+ 
+            data = new string[]{ title, genre, detail, author , pages};
+        }
+    }
+
 }
